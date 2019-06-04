@@ -1,5 +1,5 @@
 {
-  "name": "react-grid-system",
+  "name": "@chalbert/react-grid-system",
   "version": "1.0.0",
   "description": "A powerful Bootstrap-like responsive grid system for React.",
   "main": "./build/index.js",
