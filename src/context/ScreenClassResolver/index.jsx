@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import ScreenClassProvider, { ScreenClassContext, NO_PROVIDER_FLAG } from '../ScreenClassProvider';
 
 export default class ScreenClassResolver extends Component {
+  static displayName = 'ScreenClassResolver';
+
   static propTypes = {
     children: PropTypes.func.isRequired,
   };

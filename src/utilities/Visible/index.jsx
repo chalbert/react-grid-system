@@ -4,6 +4,8 @@ import * as style from './style';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class Visible extends React.PureComponent {
+  static displayName = 'Visible';
+
   static propTypes = {
     /**
      * Content of the component
@@ -55,3 +57,4 @@ export default class Visible extends React.PureComponent {
     </ScreenClassResolver>
   );
 }
+

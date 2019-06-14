@@ -6,6 +6,8 @@ import { GutterWidthContext } from '../Row';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class Col extends React.PureComponent {
+  static displayName = 'Col';
+
   static propTypes = {
     /**
      * Content of the column

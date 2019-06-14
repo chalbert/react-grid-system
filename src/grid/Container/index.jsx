@@ -5,6 +5,8 @@ import { getConfiguration } from '../../config';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class Container extends React.PureComponent {
+  static displayName = 'Container';
+
   static propTypes = {
     /**
      * Content of the component

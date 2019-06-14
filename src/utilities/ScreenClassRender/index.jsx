@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class ScreenClassRender extends React.PureComponent {
+  static displayName = 'ScreenClassRender';
+
   static propTypes = {
     /**
      * The function which return value will be rendered.

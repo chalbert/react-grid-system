@@ -6,6 +6,8 @@ import getStyle from './style';
 export const GutterWidthContext = React.createContext(false);
 
 export default class Row extends React.PureComponent {
+  static displayName = 'Row';
+
   static propTypes = {
     /**
      * Content of the element
