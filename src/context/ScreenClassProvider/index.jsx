@@ -9,6 +9,8 @@ export const NO_PROVIDER_FLAG = 'NO_PROVIDER_FLAG';
 export const ScreenClassContext = React.createContext(NO_PROVIDER_FLAG);
 
 export default class ScreenClassProvider extends PureComponent {
+  static displayName = 'ScreenClassProvider';
+
   static propTypes = {
     /**
      * Children of the ScreenClassProvider.

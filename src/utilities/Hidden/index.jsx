@@ -4,6 +4,8 @@ import * as style from './style';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class Hidden extends React.PureComponent {
+  static displayName = 'Hidden';
+
   static propTypes = {
     /**
      * Content of the component
@@ -55,3 +57,4 @@ export default class Hidden extends React.PureComponent {
     </ScreenClassResolver>
   );
 }
+
