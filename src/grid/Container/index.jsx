@@ -67,7 +67,7 @@ export default class Container extends React.PureComponent {
 
     const { component } = props;
     const { componentDecorator } = getConfiguration();
-    this.decoratedComponent = componentDecorator(component);
+    this.decoratedComponent = componentDecorator(component, this);
   }
 
   render() {
