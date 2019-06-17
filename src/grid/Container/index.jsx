@@ -48,6 +48,10 @@ export default class Container extends React.PureComponent {
     /**
      * Use your own component
      */
+    as: PropTypes.elementType,
+    /**
+     * Alias of "as" prop
+     */
     component: PropTypes.elementType,
   };
 
@@ -59,15 +63,17 @@ export default class Container extends React.PureComponent {
     lg: false,
     xl: false,
     style: {},
-    component: 'div',
+    as: null,
+    component: null,
   };
 
   constructor(props) {
     super(props);
 
-    const { component } = props;
+    const { as, component } = props;
+    const Component = as || component || 'div';
     const { componentDecorator } = getConfiguration();
-    this.decoratedComponent = componentDecorator(component, this);
+    this.decoratedComponent = componentDecorator(Component, this);
   }
 
   render() {
