@@ -89,6 +89,10 @@ export default class Col extends React.PureComponent {
     /**
      * Use your own component
      */
+    as: PropTypes.elementType,
+    /**
+     * Alias of "as" prop
+     */
     component: PropTypes.elementType,
   };
 
@@ -104,15 +108,17 @@ export default class Col extends React.PureComponent {
     pull: {},
     style: {},
     debug: false,
-    component: 'div',
+    as: null,
+    component: null,
   };
 
   constructor(props) {
     super(props);
 
-    const { component } = props;
+    const { as, component } = props;
+    const Component = as || component || 'div';
     const { componentDecorator } = getConfiguration();
-    this.decoratedComponent = componentDecorator(component, this);
+    this.decoratedComponent = componentDecorator(Component, this);
   }
 
   renderCol = (gutterWidth, screenClass) => {
@@ -128,7 +134,6 @@ export default class Col extends React.PureComponent {
       push,
       debug,
       style,
-      component,
       ...otherProps
     } = this.props;
     const theStyle = getStyle({

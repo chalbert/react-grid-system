@@ -48,8 +48,12 @@ export default class Row extends React.PureComponent {
      */
     debug: PropTypes.bool,
     /**
-     * Use your own component
-     */
+    * Use your own component
+    */
+    as: PropTypes.elementType,
+    /**
+    * Alias of "as" prop
+    */
     component: PropTypes.elementType,
     /**
      * Whether the cols should not wrap
@@ -64,15 +68,17 @@ export default class Row extends React.PureComponent {
     gutterWidth: null,
     style: {},
     debug: false,
-    component: 'div',
+    as: null,
+    component: null,
   };
 
   constructor(props) {
     super(props);
 
-    const { component } = props;
+    const { as, component } = props;
+    const Component = as || component || 'div';
     const { componentDecorator } = getConfiguration();
-    this.decoratedComponent = componentDecorator(component, this);
+    this.decoratedComponent = componentDecorator(Component, this);
   }
 
   render = () => {
